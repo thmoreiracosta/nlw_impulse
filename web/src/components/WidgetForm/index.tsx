@@ -36,24 +36,37 @@ export type FeedbackType = keyof typeof feedbackTypes
 export function WidgetForm() {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null)
 
+  function handRestartFeedback() {
+    setFeedbackType(null)
+  }
+
   return (
     <div className="bg-zinc-900 p-4 relative rounded-2xl mb-4 flex flex-col items-center shadow-lg w-[calc(100vw-2rem)] md:w-auto">
       {!feedbackType ? (
         <FeedbackTypeStep onFeedbackTypeChange={setFeedbackType} />
       ) : (
-        <FeedbackContentStep feedbackType={feedbackType} />
+        <FeedbackContentStep
+          feedbackType={feedbackType}
+          onFeedbackRestartRequested={handRestartFeedback}
+        />
       )}
 
-      <p>
+      <p className="text-sm text-neutral-500 ">
         {' '}
-        <a target="_blank" href="https://github.com/thmoreiracosta">
+        by{' '}
+        <a
+          className="underline underline-offset-2"
+          target="_blank"
+          href="https://github.com/thmoreiracosta"
+        >
           {' '}
-          by Thiago Costa{' '}
-        </a>
+          Thiago Costa
+        </a>{' '}
+        (c) 2022{' '}
       </p>
 
       <footer className="text-xs text-neutral-400 flex space-x-1">
-        Feito com <FaHeart className="text-[#B51942] w-4 m-1" />
+        Feito com <FaHeart className="text-[#B51942] w-3 h-3 m-1" />
         pela
         <a
           className="underline underline-offset-2"
