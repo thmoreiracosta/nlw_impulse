@@ -66,7 +66,7 @@ export function WidgetForm() {
       </p>
 
       <footer className="text-xs text-neutral-400 flex space-x-1">
-        Feito com <FaHeart className="text-[#B51942] w-3 h-3 m-1" />
+        Feito com <FaHeart className="text-[#B51942] w-4 h-3 m-1" />
         pela
         <a
           className="underline underline-offset-2"

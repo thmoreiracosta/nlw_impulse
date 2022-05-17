@@ -1,5 +1,5 @@
 import { ArrowArcLeft, ArrowLeft } from 'phosphor-react'
-import { FaCamera } from 'react-icons/fa'
+import { FaCamera, FaShoePrints } from 'react-icons/fa'
 import { FeedbackType, feedbackTypes } from '..'
 import { CloseButton } from '../../CloseButton'
 
@@ -43,11 +43,17 @@ export function FeedbackContentStep({
           placeholder="Algo não está funcionando bem? Queremos corrigir. Conte com detalhes o que está acontecendo..."
         />
 
-        <footer className="my-3 w-full flex gap-2 mp-2 items-center justify-center">
-          <FaCamera className="w-8 cursor-pointer" />
+        <footer className="my-3 w-full flex gap-2 mt-2 items-center justify-center ">
+          <button>
+            <FaCamera
+              onClickCapture={print}
+              className="w-10 h-5 cursor-pointer"
+            />
+          </button>
+
           <button
             type="submit"
-            className="p-2 bg-brand-500 rounded-md border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:oultline-none "
+            className="p-2 bg-brand-500 rounded-[4px] border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:oultline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-offset-brand-500 transition-colors"
           >
             Enviar feedback
           </button>
